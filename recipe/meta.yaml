@@ -1,5 +1,5 @@
 {% set name = "pandasgui" %}
-{% set version = "0.2.7" %}
+{% set version = "0.2.9" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pandasgui-{{ version }}.tar.gz
-  sha256: a41ee7ca07a5a6d58b050209366e1a4873f13cc4ca8298fad9d81773f2a9e193
+  sha256: 8cae6147d933fb7acba35d870dc335099b059ebd990efd39cb2687219ede06b9
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<35]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -35,7 +35,7 @@ test:
   imports:
     - pandasgui  # [win]
   commands:
-    - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'python -c "import pandasgui"'  # [not win]
+    - DISPLAY=localhost: 1.0 xvfb-run -a bash -c 'python -c "import pandasgui"'  # [not win]
   #   - pip check
   # requires:
   #   - pip
